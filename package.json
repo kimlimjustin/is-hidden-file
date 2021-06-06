@@ -1,0 +1,17 @@
+{
+  "name": "is-hidden-file",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "install": "node src/install.js",
+    "test": "jest",
+    "native_build": "node-gyp rebuild"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.0.4"
+  }
+}
