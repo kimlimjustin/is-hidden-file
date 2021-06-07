@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Check if a file/folder is hidden on node js that works on any platform.",
   "main": "src/index.js",
+  "author": "Justin Maximillian Kimlim <kimlimjustin@gmail.com>",
   "scripts": {
     "install": "node src/install.js",
     "test": "jest",
     "native_build": "node-gyp rebuild"
   },
   "keywords": ["file", "is", "hidden", "dot", "is-hidden", "windows", "linux"],
-  "author": "",
   "license": "MIT",
   "devDependencies": {
     "jest": "^27.0.4"
