@@ -6,8 +6,8 @@
 
 </div>
 
-Unix: Check file name starts with `.`.
-Windows: Check if file hidden using native code.
+- Unix: Check file name starts with `.`.
+- Windows: Check if file hidden using native code.
 
 ## Installation
 - npm: `npm i is-hidden-file`
