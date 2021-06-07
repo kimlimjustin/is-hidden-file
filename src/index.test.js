@@ -8,7 +8,3 @@ test("Is .git folder hidden?", () => {
 test("Is src folder hidden?", () => {
     expect(isHiddenFile(path.join(__dirname))).toBe(false)
 })
-
-test("Is src folder hidden", () => {
-    expect(isHiddenFile("C:\\hp")).toBe(true)
-})
