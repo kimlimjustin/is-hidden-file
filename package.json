@@ -1,14 +1,14 @@
 {
   "name": "is-hidden-file",
   "version": "1.0.0",
-  "description": "",
+  "description": "Check if a file/folder is hidden on node js that works on any platform.",
   "main": "src/index.js",
   "scripts": {
     "install": "node src/install.js",
     "test": "jest",
     "native_build": "node-gyp rebuild"
   },
-  "keywords": [],
+  "keywords": ["file", "is", "hidden", "dot", "is-hidden", "windows", "linux"],
   "author": "",
   "license": "MIT",
   "devDependencies": {
