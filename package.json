@@ -1,17 +1,32 @@
 {
   "name": "is-hidden-file",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Check if a file/folder is hidden on node js that works on any platform.",
   "main": "src/index.js",
   "author": "Justin Maximillian Kimlim <kimlimjustin@gmail.com>",
-  "repository": {"type": "git", "url": "https://github.com/kimlimjustin/is-hidden-file.git"},
-  "os": ["darwin", "linux", "windows"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kimlimjustin/is-hidden-file.git"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "windows"
+  ],
   "scripts": {
     "install": "node src/install.js",
     "test": "jest",
     "native_build": "node-gyp rebuild"
   },
-  "keywords": ["file", "is", "hidden", "dot", "is-hidden", "windows", "linux"],
+  "keywords": [
+    "file",
+    "is",
+    "hidden",
+    "dot",
+    "is-hidden",
+    "windows",
+    "linux"
+  ],
   "license": "MIT",
   "devDependencies": {
     "jest": "^27.0.4"
