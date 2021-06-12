@@ -1,6 +1,6 @@
 {
   "name": "is-hidden-file",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Check if a file/folder is hidden on node js that works on any platform.",
   "main": "src/index.js",
   "author": "Justin Maximillian Kimlim <kimlimjustin@gmail.com>",
