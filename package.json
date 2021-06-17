@@ -30,5 +30,8 @@
   "license": "MIT",
   "devDependencies": {
     "jest": "^27.0.4"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.3"
   }
 }
