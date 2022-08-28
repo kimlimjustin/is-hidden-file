@@ -1,9 +1,18 @@
+#define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING
 #include <node_api.h>
 #include <assert.h>
 #include <tchar.h>
 #include <iostream>
 #include <windows.h>
+#include <codecvt>
 using namespace std;
+
+wstring u16stringToWstring(u16string const &str)
+{
+	wstring_convert<codecvt_utf16<wchar_t, 0x10ffff, little_endian>, wchar_t> conv;
+	wstring wstr = conv.from_bytes(reinterpret_cast<const char *> (&str[0]), reinterpret_cast<const char *> (&str[0] + str.size()));
+	return wstr;
+}
 
 void throwIfNotSuccess(napi_env env, napi_status status, char *msg)
 {
@@ -13,9 +22,10 @@ void throwIfNotSuccess(napi_env env, napi_status status, char *msg)
 	}
 }
 
-bool checkHiddenFile(string const &FilePath)
+bool checkHiddenFile(u16string const &FilePath)
 {
-	DWORD const result = GetFileAttributesA(FilePath.c_str());
+	wstring path = u16stringToWstring(FilePath);
+	DWORD const result = GetFileAttributesW(path.c_str());
 	if (result != 0xFFFFFFFF)
 	{
 		return !!(result & FILE_ATTRIBUTE_HIDDEN);
@@ -36,11 +46,11 @@ napi_value isHiddenFile(napi_env env, napi_callback_info info)
 
 	size_t str_size;
 	size_t str_size_read;
-	napi_get_value_string_utf8(env, argv[0], NULL, 0, &str_size);
-	char *path;
-	path = (char *)calloc(str_size + 1, sizeof(char));
+	napi_get_value_string_utf16(env, argv[0], NULL, 0, &str_size);
+	char16_t *path;
+	path = (char16_t *)calloc(str_size + 1, sizeof(char16_t));
 	str_size = str_size + 1;
-	napi_get_value_string_utf8(env, argv[0], path, str_size, &str_size_read);
+	napi_get_value_string_utf16(env, argv[0], path, str_size, &str_size_read);
 
 	napi_value result;
 	status = napi_get_boolean(env, checkHiddenFile(path), &result);
