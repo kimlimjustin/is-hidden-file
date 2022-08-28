@@ -44,6 +44,7 @@ napi_value isHiddenFile(napi_env env, napi_callback_info info)
 
 	napi_value result;
 	status = napi_get_boolean(env, checkHiddenFile(path), &result);
+	free(path);
 	return result;
 }
 
