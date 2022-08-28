@@ -6,4 +6,5 @@ if (os.platform() === 'win32') {
         input: 'win32 detected. Build native module.',
         stdio: 'inherit'
     });
+    spawn.sync('cmd', ['/c', 'attrib', '+h', 'test\\.mystère.txt']);
 }
